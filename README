@@ -1,0 +1,51 @@
+Данный проект позволяет собирать lfs в полуавтоматическом режиме (выбераешь пакет и нажимаешь установить), создан для того чтобы проверять возможность сборки с конкретными версиями пакетов по нужными сценариям (для работы с проектом рекомендую использовать qtcreator)
+
+Для работы программы нужны некоторые действия:
+  sudo cp -r .../lfsscripts /homr
+  sudo mkdir -p /mnt/lfs/tools
+  sudo ln -s /mnt/lfs/tools /tools
+  sudo chmod 777 /mnt/lfs/tools
+  sudo mkdir /home/sources /home/build
+  sudo chmod 777 /home/sources
+  sudo chmod 777 /home/build
+
+По руководству рекомендованно создать ссылку на директорию, в которую будешь собирать lfs (ln -s /mnt/lfs/tools /tools)
+
+Можно задать другие параметры для установки, но в моем случае:
+  директория с нужными сцениями для сборки - /home/lfsscripts (должны быть права на чтение)
+  директория для скачанных файлов - /home/sources (должны быть полные права)
+  директория для сборки из исходников - /home/build (должны быть полные права)
+  место для установки - "/tools" (должны быть полные права)
+
+Пакеты (исходники) прописанны в Pkgs2.qml
+
+Cценарии создаются на основе заготовок (), дополняются некоторыми переменными.
+1. до:
+#!/bin/sh
+T cd ../${linux["dir"]}
+
+T make mrproper
+T make headers
+T cp -rv usr/include/* $TOOLS/include
+2. после
+#!/bin/sh
+TOOLS=/tools2
+LFS=/mnt/lfs
+LFS_TGT=x86_64-lfs-linux-gnu
+PATH=$TOOLS/bin:/bin:/usr/bin
+set +h
+set -e
+umask 022
+LC_ALL=POSIX
+export LFS LC_ALL LFS_TGT PATH
+function T { $@ || exit 1; }
+declare -A linux=( ["name"]="linux" ["dir"]="linux-5.5.3" ["version"]="5.5.3" )
+#!/bin/sh
+T cd ../${linux["dir"]}
+
+T make mrproper
+T make headers
+T cp -rv usr/include/* $TOOLS/include
+
+
+Главным образом создается переменная по названию пакета и некоторые переменным ($LFS, $LFS_TGT, ...) для успешной сборки программы и фукция "T" для завершения этапа в случае возникновения ошибки

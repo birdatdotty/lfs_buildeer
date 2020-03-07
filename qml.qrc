@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Bar.qml</file>
+        <file>ListBar.qml</file>
+        <file>InstallDiv.qml</file>
+        <file>Pkgs2.qml</file>
+        <file>Model2.qml</file>
+        <file>FileDialog.qml</file>
+    </qresource>
+</RCC>
