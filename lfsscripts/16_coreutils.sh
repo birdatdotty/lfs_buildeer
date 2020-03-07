@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#cd ../${coreutils["dir"]}/unix
 cd ../${coreutils["dir"]}
 ./configure --prefix=$TOOLS --enable-install-program=hostname
 

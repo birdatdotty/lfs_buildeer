@@ -8,8 +8,8 @@ T mv -v ../${mpfr["dir"]} mpfr
 T mv -v ../${gmp["dir"]} gmp
 T mv -v ../${mpc["dir"]} mpc
 
-#cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-#  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h
+
+
 
 for file in gcc/config/{linux,i386/linux{,64}}.h
 do

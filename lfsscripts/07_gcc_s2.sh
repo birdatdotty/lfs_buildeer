@@ -4,9 +4,9 @@
 
 cd ../${gcc["dir"]}
 
-T mv -v ../${mpfr["dir"]} mpfr
-T mv -v ../${gmp["dir"]} gmp
-T mv -v ../${mpc["dir"]} mpc
+mv -v ../${mpfr["dir"]} mpfr
+mv -v ../${gmp["dir"]} gmp
+mv -v ../${mpc["dir"]} mpc
 
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h
@@ -24,9 +24,6 @@ echo "
 
   touch $file.orig
 done
-
-sed -i '/k prot/agcc_cv_libc_provides_ssp=yes' gcc/configure
-sed -i 's/BUILD_INFO=info/BUILD_INFO=/' gcc/configure
 
 case $(uname -m) in
   x86_64)

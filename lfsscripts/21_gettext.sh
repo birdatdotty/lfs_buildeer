@@ -1,7 +1,8 @@
 #!/bin/sh
 
-cd ../${gettext["dir"]}
+cd ../${file["dir"]}
+./configure --prefix=$TOOLS
 
-./configure --disable-shared
-make
-cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} $TOOLS/bin
+T make
+T make check
+T make install
