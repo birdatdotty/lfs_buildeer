@@ -88,7 +88,7 @@ Pkgs {
         dir: "wget-1.20"
     }
     Pkg {
-        href: "https://osdn.net/frs/g_redir.php?m=kent&f=tcl%2FTcl%2F8.6.8%2Ftcl8.6.8-src.tar.gz"
+        href: "https://www.mirrorservice.org/sites/ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.10-src.tar.gz"
         name: "tcl"
         file: "tcl8.6.10-src.tar.gz"
         version: "8.6.10"
@@ -96,7 +96,7 @@ Pkgs {
         dir: "tcl8.6.10"
     }
     Pkg {
-        href: "https://prdownloads.sourceforge.net/expect/expect5.45.4.tar.gz"
+        href: "https://ftp.osuosl.org/pub/blfs/conglomeration/expect/expect5.45.4.tar.gz"
         name: "expect"
         file: "expect5.45.4.tar.gz"
         version: "5.45.4"
@@ -144,7 +144,7 @@ Pkgs {
         dir: "bison-3.5.2"
     }
     Pkg {
-        href: "https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+        href: "https://mirror.yandex.ru/gentoo-distfiles/distfiles/bzip2-1.0.8.tar.gz"
         name: "bzip2"
         file: "bzip2-1.0.8.tar.gz"
         version: "1.0.8"
@@ -184,12 +184,12 @@ Pkgs {
         dir: "findutils-4.7.0"
     }
     Pkg {
-        href: "http://ftp.gnu.org/gnu/gawk/gawk-5.0.0.tar.xz"
+        href: "https://mirror.yandex.ru/gentoo-distfiles/distfiles/gawk-5.0.1.tar.xz"
         name: "gawk"
-        file: "gawk-5.0.0.tar.xz"
-        version: "5.0.0"
+        file: "gawk-5.0.1.tar.xz"
+        version: "5.0.1"
         suffix: ".tar.xz"
-        dir: "gawk-5.0.0"
+        dir: "gawk-5.0.1"
     }
     Pkg {
         href: "http://ftp.gnu.org/gnu/gettext/gettext-0.20.1.tar.xz"
@@ -257,12 +257,12 @@ Pkgs {
         dir: "sed-4.8"
     }
     Pkg {
-        href: "https://tukaani.org/xz/xz-5.2.4.tar.xz"
+        href: "https://mirror.yandex.ru/gentoo-distfiles/distfiles/tar-1.32.tar.bz2"
         name: "tar"
-        file: "xz-5.2.4.tar.xz"
-        version: "5.2.4"
-        suffix: ".tar.xz"
-        dir: "xz-5.2.4"
+        file: "tar-1.32.tar.bz2"
+        version: "1.32"
+        suffix: ".tar.bz2"
+        dir: "tar-1.32"
     }
     Pkg {
         href: "http://ftp.gnu.org/gnu/texinfo/texinfo-6.7.tar.xz"

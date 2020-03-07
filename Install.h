@@ -103,6 +103,7 @@ public:
     Q_INVOKABLE QString getBuildDir() const;
 
     Q_INVOKABLE QString getBashHash(QString pkgName) const;
+    Q_INVOKABLE QString getBashHashAsPkg(QString pkgName) const;
     Q_INVOKABLE QString getBash() const;
 
     Q_INVOKABLE void setDoInstall(bool newDoInstall );

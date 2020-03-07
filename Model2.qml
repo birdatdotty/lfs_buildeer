@@ -166,40 +166,46 @@ Install {
     }
     Step {
         // ERROR
-        name: "Gawk-5.0.0"
+        name: "Gawk-5.0.1"
         pkg: "gawk"
-        script: "20_gawk.sh"
+//        script: "20_gawk.sh"
+        script: "default.sh"
         sbu: "0.2 SBU"
 //        status: Step.FAILED
     }
     Step {
         name: "Gettext-0.20.1"
         pkg: "gettext"
-        script: "21_gettext.sh"
+//        script: "21_gettext.sh"
+        script: "default.sh"
         sbu: "1.6 SBU"
     }
     Step {
         name: "Grep-3.4"
         pkg: "grep"
-        script: "22_grep.sh"
+//        script: "22_grep.sh"
+        script: "default.sh"
         sbu: "0.2 SBU"
     }
     Step {
         name: "Gzip-1.10"
         pkg: "gzip"
-        script: "23_gzip.sh"
+//        script: "23_gzip.sh"
+        script: "default.sh"
         sbu: "0.1 SBU"
     }
     Step {
         name: "Make-4.3"
         pkg: "make"
-        script: "24_make.sh"
+//        script: "24_make.sh"
+        script: "default.sh"
         sbu: "0.1 SBU"
     }
     Step {
         name: "Patch-2.7.6"
         pkg: "path"
-        script: "25_patch.sh"
+//        script: "25_patch.sh"
+        script: "default.sh"
         sbu: "0.2 SBU"
     }
     Step {
@@ -218,31 +224,35 @@ Install {
     Step {
         name: "Sed-4.8"
         pkg: "sed"
-        script: "28_sed.sh"
+//        script: "28_sed.sh"
+        script: "default.sh"
         sbu: "0.2 SBU"
     }
     Step {
         name: "Tar-1.32"
         pkg: "tar"
-        script: "29_tar.sh"
+//        script: "29_tar.sh"
+        script: "default.sh"
         sbu: "0.2 SBU"
     }
     Step {
         name: "Texinfo-6.7"
         pkg: "texinfo"
-        script: "30_texinfo.sh"
+//        script: "30_texinfo.sh"
+        script: "default.sh"
         sbu: "0.2 SBU"
-    }
-    Step {
-        name: "Util-linux-2.35.1"
-        pkg: "utilLinux"
-        script: "31_util-linux.sh"
-        sbu: "0.9 SBU"
     }
     Step {
         name: "Xz-5.2.4"
         pkg: "xz"
-        script: "32_xz.sh"
+//        script: "32_xz.sh"
+        script: "default.sh"
         sbu: "0.2 SBU"
     }
+//    Step {
+//        name: "Util-linux-2.35.1"
+//        pkg: "utilLinux"
+//        script: "31_util-linux.sh"
+//        sbu: "0.9 SBU"
+//    }
 }

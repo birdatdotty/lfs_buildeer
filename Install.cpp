@@ -162,10 +162,18 @@ QString Install::getBuildDir() const {
 
 QString Install::getBashHash(QString pkgName) const
 {
-    QString tpl = "declare -A %1=( [\"name\"]=\"%2\" [\"dir\"]=\"%3\" [\"version\"]=\"%4\" )";
+    QString tpl = "declare -A %1=( [\"name\"]=\"%1\" [\"dir\"]=\"%2\" [\"version\"]=\"%3\" )";
     const Pkg2 *pkg = allPkgs.at(pkgName);
 
-    return tpl.arg(pkg->getName(), pkg->getName(), pkg->getDir(), pkg->getVersion());
+    return tpl.arg(pkg->getName(), pkg->getDir(), pkg->getVersion());
+}
+
+QString Install::getBashHashAsPkg(QString pkgName) const
+{
+    QString tpl = "declare -A pkg=( [\"name\"]=\"%1\" [\"dir\"]=\"%2\" [\"version\"]=\"%3\" )";
+    const Pkg2 *pkg = allPkgs.at(pkgName);
+
+    return tpl.arg(pkg->getName(), pkg->getDir(), pkg->getVersion());
 }
 
 QString Install::getBash() const {

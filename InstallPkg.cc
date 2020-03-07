@@ -138,9 +138,7 @@ void InstallPkg::install2()
 void InstallPkg::install3()
 {
     qDebug() << "void InstallPkg::install3()";
-    msg("install3: " + saveInstall->getScriptsDir() + QDir::separator() + saveStep->getScript());
 
-    msg(saveInstall->getBashHash(savePkg->getName()));
     QStringList deps = savePkg->getDeps();
     QStringList info = savePkg->getInfo();
 
@@ -159,6 +157,7 @@ void InstallPkg::install3()
         QTextStream out(&newFile);
         out << saveInstall->getBash() << "\n";
         out << saveInstall->getBashHash(savePkg->getName()) << "\n";
+        out << saveInstall->getBashHashAsPkg(savePkg->getName()) << "\n";
         for (QString dep: deps)
             out << saveInstall->getBashHash(dep) << "\n";
         for (QString pkgInfo: info)
